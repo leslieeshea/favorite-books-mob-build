@@ -8,18 +8,31 @@
   <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
   <link rel="stylesheet" href="./src/header.css">
   <link rel="stylesheet" href="./src/main.css">
-    <title>Document</title>
+    <title>Favorite Movies</title>
 </head>
 <body>
     <div id="header-container">
         
     </div>
     <main>
-        <section id="movie-section">
-            <ul id="movie-list">
-                
-            </ul>
-        </section>
+        <form id="search">
+            <input type="text" name=
+            "search-input">
+            <button>Search</button>
+        </form>
+        <p id="prompt">Search by movie name to get started</p>
+        <div id="movie-section" class="hidden">
+            <section id="paging-section">
+                <button id="previous-button">Previous</button>
+                Page <span id="current-page"></span> of <span id="total-pages"></span>
+                <button id="next-button">Next</button>
+            </section>
+            <section>
+                <ul id="movie-list">
+                    
+                </ul>
+            </section>
+        </div>
     </main>
     <script type="module" src="./src/index.js"></script>
 </body>

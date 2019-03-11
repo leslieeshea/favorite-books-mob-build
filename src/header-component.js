@@ -12,8 +12,8 @@ export function makeHeader() {
 
 export function makeProfile(user) {
     const html = /*html*/ `<div class="profile">
-    <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg">
-    <span>Megan Marshall</span>
+    <img src="${user.photoURL}">
+    <span>${user.displayName}</span>
     <button>Sign Out</button>
 </div>`;
 
@@ -22,7 +22,14 @@ export function makeProfile(user) {
     return template.content;
 }
 
-const headerContainer = document.getElementById('header-container');
+function loadHeader() {
+    const headerContainer = document.getElementById('header-container');
 
-const dom = makeHeader();
-headerContainer.appendChild(dom);
+    const dom = makeHeader();
+    headerContainer.appendChild(dom);
+    auth.onAuthStateChanged(user => {
+        if(user) {
+            const userNameDisplay = document.getElementById(user-name);
+        }
+    })
+}

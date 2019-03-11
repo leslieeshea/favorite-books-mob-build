@@ -16,7 +16,7 @@ test('make header', assert => {
 test('make user profile', assert => {
     const user = {
         displayName: 'Megan Marshall',
-        photoUrl: 'http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg'
+        photoURL: 'http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg'
     };
 
 

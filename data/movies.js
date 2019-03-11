@@ -1,4 +1,4 @@
-[{
+export default [{
 	"vote_count": 10870,
 	"id": 11,
 	"video": false,

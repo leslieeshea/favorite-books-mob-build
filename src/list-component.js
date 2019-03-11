@@ -9,4 +9,11 @@ export function makeMovieTemplate(movie) {
     template.innerHTML = html;
     return template.content;
 }
+const movieListContainer = document.getElementById('movie-list');
 
+export default function loadMovies(movies) {
+    movies.forEach(movie => {
+        const dom = makeMovieTemplate(movie);
+        movieListContainer.appendChild(dom);
+    });
+}

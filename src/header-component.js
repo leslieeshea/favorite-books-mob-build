@@ -11,8 +11,9 @@ export function makeHeader() {
 }
 
 export function makeProfile(user) {
+    const avatar = user.photoURL || '../assets/smiley.png';
     const html = /*html*/ `<div class="profile">
-    <img src="${user.photoURL}">
+    <img src="${avatar}">
     <span>${user.displayName}</span>
     <button>Sign Out</button>
 </div>`;
@@ -22,17 +23,18 @@ export function makeProfile(user) {
     return template.content;
 }
 
+const headerContainer = document.getElementById('header-container');
+
 export default function loadHeader(options) {
-    const headerContainer = document.getElementById('header-container');
 
     const dom = makeHeader();
+    const header = dom.querySelector('header');
     headerContainer.appendChild(dom);
 
     if(options && options.skipAuth) {
         return;
     }
 
-    const header = dom.querySelector('header');
     auth.onAuthStateChanged(user => {
         if(user) {  
             const userDom = makeProfile(user);

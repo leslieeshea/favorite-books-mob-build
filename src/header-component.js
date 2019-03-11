@@ -27,9 +27,15 @@ function loadHeader() {
 
     const dom = makeHeader();
     headerContainer.appendChild(dom);
+
+    const header = dom.querySelector('header');
     auth.onAuthStateChanged(user => {
-        if(user) {
-            const userNameDisplay = document.getElementById(user-name);
+        if(user) {  
+            const userDom = makeProfile(user);
+            header.appendChild(userDom);
         }
-    })
+        else {
+            window.location = '/auth.html';
+        }
+    });
 }

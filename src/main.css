@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    padding: 6px;
+    align-items: center;
+    width: 150px;
+    height: 200px;
+}
+
+h2 {
+    font-size: 15px;
+}

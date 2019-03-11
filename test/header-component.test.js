@@ -7,8 +7,8 @@ test('make header', assert => {
 
     const expected = /*html*/
     `  <header>
-        <img src="assets/alchemy-logo.png">
-        <h1>Favorite Books</h1></header>`;
+        <img id="logo-image" src="assets/alchemy-logo.png">
+        <h1>Favorite Movies</h1></header>`;
 
     assert.htmlEqual(dom, expected);
 });
@@ -22,7 +22,7 @@ test('make user profile', assert => {
 
     const expected = /*html*/
     `  <div class="profile">
-    <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg">
+    <img id="user-image" src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg">
     <span>Megan Marshall</span>
     <button>Sign Out</button>
 </div>`;

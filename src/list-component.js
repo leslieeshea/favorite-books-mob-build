@@ -26,6 +26,7 @@ export default function loadMovies(callback) {
     selectCallback = callback;
 }
 
+let selectedMovie = null;
 export function updateMovies(movies) {
     while(movieListContainer.firstChild) {
         movieListContainer.firstChild.remove();
@@ -34,11 +35,11 @@ export function updateMovies(movies) {
         const dom = makeMovieTemplate(movie);
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
-            if(selectedItem) {
+            if(selectedMovie) {
                 li.classList.remove('selected');
             }
             li.classList.add('selected');
-            selectedItem = li;
+            selectedMovie = li;
             selectCallback(movie);
         });
         const favoriteStar = dom.querySelector('.favorite-star');

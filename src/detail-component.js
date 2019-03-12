@@ -1,4 +1,4 @@
-export default function makeMovieDetail(movie) {
+export function makeMovieDetail(movie) {
     let backdropPath = null;
     if(movie.backdrop_path) {
         backdropPath = `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`;
@@ -18,4 +18,13 @@ export default function makeMovieDetail(movie) {
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+const detailContainer = document.getElementById('detail-container');
+export default function loadMovieDetail(movie) {
+    while(detailContainer.firstChild) {
+        detailContainer.firstChild.remove();
+    }
+    const dom = makeMovieDetail(movie);
+    detailContainer.appendChild(dom);
 }

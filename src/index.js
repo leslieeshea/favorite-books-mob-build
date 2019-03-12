@@ -3,10 +3,11 @@ import loadMovies from './list-component.js';
 import './search-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchTerm } from './search-component.js';
-import makeSearchMovieUrl from './movie-api.js';
+import { makeSearchMovieUrl } from './movie-api.js';
 import { updatePagingInfo } from './paging-component.js';
 import { auth } from './firebase.js';
 import { updateMovies } from './list-component.js'; 
+import loadMovieDetail from './detail-component.js';
 
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movie-section');
@@ -14,7 +15,7 @@ const moviesSection = document.getElementById('movie-section');
 loadHeader();
 
 loadMovies(movie => {
-
+    loadMovieDetail(movie);
 });
 
 window.addEventListener('hashchange', loadQuery);
@@ -43,7 +44,7 @@ function loadQuery() {
     fetch(url)
         .then(response => response.json())
         .then(movies => {
-            loadMovies(movies.results);
+            updateMovies(movies.results);
             const pagingInfo = {
                 page: movies.page,
                 totalPages: movies.total_pages

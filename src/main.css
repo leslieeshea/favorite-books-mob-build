@@ -23,3 +23,7 @@ h2 {
 .poster {
     height: 50%;
 }
+
+.hidden {
+    display: none;
+}

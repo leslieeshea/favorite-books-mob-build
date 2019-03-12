@@ -6,6 +6,7 @@ import { readFromQuery } from './query-component.js';
 import { updateSearchTerm } from './search-component.js';
 import makeSearchMovieUrl from './movie-api.js';
 import { updatePagingInfo } from './paging-component.js';
+import { auth } from './firebase.js';
 
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movie-section');
@@ -13,7 +14,10 @@ const moviesSection = document.getElementById('movie-section');
 loadHeader();
 
 window.addEventListener('hashchange', loadQuery);
-loadQuery();
+
+auth.onAuthStateChanged(() => {
+    loadQuery();
+});
 
 function loadQuery() {
     const query = window.location.hash.slice(1);

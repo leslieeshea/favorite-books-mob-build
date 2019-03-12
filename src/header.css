@@ -17,6 +17,7 @@ header {
 
 h1 {
     flex-grow: 1;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .profile p {

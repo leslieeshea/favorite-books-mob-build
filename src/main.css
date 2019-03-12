@@ -1,3 +1,7 @@
+* {
+    font-family: 'Fjalla One', sans-serif;
+}
+
 ul {
     list-style-type: none;
     padding: 0px;
@@ -16,7 +20,8 @@ ul {
     width: 150px;
     height: 200px;
     box-shadow: 5px 5px 3px;
-    border-radius: 5px
+    border-radius: 5px;
+    text-align: center;
 }
 
 h2 {
@@ -25,6 +30,10 @@ h2 {
 
 .poster {
     height: 50%;
+}
+
+#page-section {
+    font-size: 75%
 }
 
 .hidden {

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./src/main.css">
     <link rel="stylesheet" href="./src/auth.css">
     <link rel="stylesheet" href="./src/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <title>Favorite Movies</title>
 </head>
 <body>
@@ -19,8 +20,10 @@
 
     </div>
     <main>
-        <p>Get signed in to track your favorite movies!</p>
-        <div id="firebaseui-auth-container"></div>
+        <div id="sign-in-container">
+            <p id="sign-in-prompt">Get signed in to track your favorite movies!</p>
+            <div id="firebaseui-auth-container"></div>
+        </div>
     </main>
     <script type="module" src="./src/auth.js"></script>
 </body>

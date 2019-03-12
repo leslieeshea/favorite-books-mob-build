@@ -7,6 +7,9 @@ import { updateSearchTerm } from './search-component.js';
 import makeSearchMovieUrl from './movie-api.js';
 import { updatePagingInfo } from './paging-component.js';
 
+const prompt = document.getElementById('prompt');
+const moviesSection = document.getElementById('movie-section');
+
 loadHeader();
 
 window.addEventListener('hashchange', loadQuery);
@@ -20,7 +23,13 @@ function loadQuery() {
     const url = makeSearchMovieUrl(queryOptions);
 
     if(!url) {
+        prompt.classList.remove('hidden');
+        moviesSection.classList.add('hidden');
         return;
+    }
+    else {
+        prompt.classList.add('hidden');
+        moviesSection.classList.remove('hidden');
     }
 
     fetch(url)

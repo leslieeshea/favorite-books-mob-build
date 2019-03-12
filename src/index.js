@@ -5,6 +5,7 @@ import './search-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchTerm } from './search-component.js';
 import makeSearchMovieUrl from './movie-api.js';
+import { updatePagingInfo } from './paging-component.js';
 
 loadHeader();
 
@@ -18,6 +19,11 @@ window.addEventListener('hashchange', () => {
         .then(response => response.json())
         .then(movies => {
             loadMovies(movies.results);
+            const pagingInfo = {
+                page: movies.page,
+                totalPages: movies.total_pages
+            };
+            updatePagingInfo(pagingInfo);
         })
         .catch(err => {
             /* eslint-disable-next-line */

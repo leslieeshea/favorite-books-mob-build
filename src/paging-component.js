@@ -17,4 +17,15 @@ export function updatePagingInfo(pagingInfo){
 function updateQuery() {
     const existingQuery = window.location.hash.slice(1);
     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
+    window.location.hash = newQuery;
 }
+
+previousButton.addEventListener('click', () => {
+    currentPageNumber--;
+    updateQuery();
+});
+
+nextButton.addEventListener('click', () => {
+    currentPageNumber++;
+    updateQuery();
+});

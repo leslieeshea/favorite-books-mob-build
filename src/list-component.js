@@ -20,13 +20,27 @@ export function makeMovieTemplate(movie) {
     return template.content;
 }
 const movieListContainer = document.getElementById('movie-list');
+let selectCallback = null; 
 
-export default function loadMovies(movies) {
+export default function loadMovies(callback) {
+    selectCallback = callback;
+}
+
+export function updateMovies(movies) {
     while(movieListContainer.firstChild) {
         movieListContainer.firstChild.remove();
     }
     movies.forEach(movie => {
         const dom = makeMovieTemplate(movie);
+        const li = dom.querySelector('li');
+        li.addEventListener('click', () => {
+            if(selectedItem) {
+                li.classList.remove('selected');
+            }
+            li.classList.add('selected');
+            selectedItem = li;
+            selectCallback(movie);
+        });
         const favoriteStar = dom.querySelector('.favorite-star');
     
         const userId = auth.currentUser.uid;

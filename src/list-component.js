@@ -32,14 +32,43 @@ export default function loadMovies(movies) {
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
         const userFavoriteMovieRef = userFavoritesRef.child(movie.id);
-        favoriteStar.addEventListener('click', () => {
-            userFavoriteMovieRef.set({
-                id: movie.id,
-                title: movie.title,
-                poster_path: movie.poster_path,
-                release_date: movie.release_date
+        userFavoriteMovieRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
+
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteStar.classList.add('favorite');
+                }
+
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteStar.classList.remove('favorite');
+                }
+                
+                favoriteStar.addEventListener('click', () => {
+                    if(isFavorite) {
+                        userFavoriteMovieRef.remove();
+                        removeFavorite();
+                    }
+                    else {
+                        userFavoriteMovieRef.set({
+                            id: movie.id,
+                            title: movie.title,
+                            poster_path: movie.poster_path,
+                            release_date: movie.release_date
+                        });
+                        addFavorite();
+                    }
+                });
             });
-        });
         movieListContainer.appendChild(dom);
     });
 }

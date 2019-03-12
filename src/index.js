@@ -9,12 +9,20 @@ import { updatePagingInfo } from './paging-component.js';
 
 loadHeader();
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', loadQuery);
+loadQuery();
+
+function loadQuery() {
     const query = window.location.hash.slice(1);
     const queryOptions = readFromQuery(query);
     updateSearchTerm(queryOptions.searchTerm);
 
     const url = makeSearchMovieUrl(queryOptions);
+
+    if(!url) {
+        return;
+    }
+
     fetch(url)
         .then(response => response.json())
         .then(movies => {
@@ -29,4 +37,4 @@ window.addEventListener('hashchange', () => {
             /* eslint-disable-next-line */
             console.error('fetch error:', err);
         });
-});
+}

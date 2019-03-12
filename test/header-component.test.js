@@ -24,7 +24,7 @@ test('make user profile', assert => {
     `  <div class="profile">
     <img id="user-image" src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg">
     <span>Megan Marshall</span>
-    <button>Sign Out</button>
+    <p><button>Sign Out</button></p>
 </div>`;
     
     const dom = makeProfile(user);

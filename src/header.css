@@ -5,7 +5,7 @@
 }
 
 #user-image {
-    width: 30px;
+    width: 20px;
     border-radius: 100%;
 }
 
@@ -13,5 +13,17 @@ header {
     display: flex;
     justify-content: flex-start;
     flex: auto;
+}
+
+h1 {
+    flex-grow: 1;
+}
+
+.profile p {
+    text-align: right;
+}
+
+.profile {
+    font-size: .8em;
 }
 

@@ -15,7 +15,7 @@ export function makeProfile(user) {
     const html = /*html*/ `<div class="profile">
     <img id="user-image" src="${avatar}">
     <span>${user.displayName}</span>
-    <button>Sign Out</button>
+    <p><button>Sign Out</button></p>
 </div>`;
 
     const template = document.createElement('template');

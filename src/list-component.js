@@ -40,7 +40,7 @@ export function updateMovies(movies) {
             }
             li.classList.add('selected');
             selectedMovie = li;
-            selectCallback(movie);
+            selectCallback(movie.id);
         });
         const favoriteStar = dom.querySelector('.favorite-star');
     

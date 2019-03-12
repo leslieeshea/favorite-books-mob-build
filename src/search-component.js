@@ -1,6 +1,7 @@
-import { writeSearchToQuery } from "./query-component";
+import { writeSearchToQuery } from './query-component.js';
 
 const searchForm = document.getElementById('search');
+const searchInput = document.getElementById('search-input');
 
 searchForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -11,3 +12,7 @@ searchForm.addEventListener('submit', event => {
     const newQuery = writeSearchToQuery(existingQuery, searchTerm);
     window.location.hash = newQuery;
 });
+
+export function updateSearchTerm(searchTerm) {
+    searchInput.value = searchTerm;
+}

@@ -8,6 +8,7 @@ ul {
 #movie-list li {
     border: 1px solid black;
     display: flex;
+    position: relative;
     flex-direction: column;
     margin: 8px;
     padding: 6px;
@@ -26,4 +27,13 @@ h2 {
 
 .hidden {
     display: none;
+}
+
+.favorite-star {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 4px;
+    color: #aaa;
+    user-select: none;
 }

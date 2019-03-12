@@ -3,7 +3,7 @@ import loadMovies from './list-component.js';
 import './search-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchTerm } from './search-component.js';
-import { makeSearchMovieUrl } from './movie-api.js';
+import { makeSearchMovieUrl, makeMovieDetailUrl } from './movie-api.js';
 import { updatePagingInfo } from './paging-component.js';
 import { auth } from './firebase.js';
 import { updateMovies } from './list-component.js'; 
@@ -14,8 +14,13 @@ const moviesSection = document.getElementById('movie-section');
 
 loadHeader();
 
-loadMovies(movie => {
-    loadMovieDetail(movie);
+loadMovies(movieId => {
+    const url = makeMovieDetailUrl(movieId);
+    fetch(url)
+        .then(response => response.json())
+        .then(movieDetail => {
+            loadMovieDetail(movieDetail);
+        });
 });
 
 window.addEventListener('hashchange', loadQuery);

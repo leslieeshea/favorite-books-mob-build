@@ -52,3 +52,13 @@ h2 {
 .favorite {
     color: gold;
 }
+
+#detail-list-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    padding: 10px;
+}
+
+#detail-header {
+    font-size: 1.5em;
+}

@@ -13,6 +13,7 @@ test('Make movie list template', assert => {
     const result = makeMovieTemplate(movie);
     const expected = /*html*/ `<li>
     <h2>Star Wars</h2>
+    <span class="favorite-star">★</span>
     <img class="poster" src="https://image.tmdb.org/t/p/w92/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
     <p>1977</p>
 </li>

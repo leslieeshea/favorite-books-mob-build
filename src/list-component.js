@@ -1,3 +1,5 @@
+import { auth, favoritesByUserRef } from './firebase.js';
+
 export function makeMovieTemplate(movie) {
     let posterPath = null;
     if(movie.poster_path) {
@@ -8,6 +10,7 @@ export function makeMovieTemplate(movie) {
     }
     const html = /*html*/ `<li>
     <h2>${movie.title}</h2>
+    <span class="favorite-star">★</span>
     <img class="poster" src="${posterPath}">
     <p>${movie.release_date.slice(0, 4)}</p>
 </li>
@@ -24,6 +27,18 @@ export default function loadMovies(movies) {
     }
     movies.forEach(movie => {
         const dom = makeMovieTemplate(movie);
+        const favoriteStar = dom.querySelector('.favorite-star');
+        favoriteStar.addEventListener('click', () => {
+            const userId = auth.currentUser.uid;
+            const userFavoritesRef = favoritesByUserRef.child(userId);
+            const userFavoriteMovieRef = userFavoritesRef.child(movie.id);
+            userFavoriteMovieRef.set({
+                id: movie.id,
+                title: movie.title,
+                poster_path: movie.poster_path,
+                release_date: movie.release_date
+            });
+        });
         movieListContainer.appendChild(dom);
     });
 }

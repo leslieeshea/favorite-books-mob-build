@@ -6,25 +6,27 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 
 const MOVIE_DETAIL_URL = `${BASE_URL}/movie`;
 
+function setDefaultQueryParams(url) {
+    url.searchParams.set('api_key', API_KEY);
+    url.searchParams.set('language', 'en-us');
+}
+
 export function makeSearchMovieUrl(queryOptions) {
     const searchTerm = queryOptions.searchTerm;
     if(!searchTerm) {
         return '';
     }
     const url = new URL(SEARCH_MOVIE_URL);
-    url.searchParams.set('api_key', API_KEY);
-    url.searchParams.set('language', 'en-us');
+    setDefaultQueryParams(url);
     url.searchParams.set('include_adult', false);
     url.searchParams.set('query', searchTerm);
     url.searchParams.set('page', queryOptions.page);
     return url.toString();
 }
 
-
 export function makeMovieDetailUrl(movieId) {
     const path = `${MOVIE_DETAIL_URL}/${movieId}`;
     const url = new URL(path);
-    url.searchParams.set('api_key', API_KEY);
-    url.searchParams.set('language', 'en-US');
+    setDefaultQueryParams(url);
     return url.toString();
 }

@@ -1,20 +1,38 @@
 import { auth } from './firebase.js';
 
 export function makeHeader() {
+    let headerText = null;
+    if(window.location.pathname === '/favorites.html') {
+        headerText = 'My Favorite Movies';
+    }
+    else {
+        headerText = 'Favorite Movies';
+    }
     const html = /*html*/
     `  <header>
     <img id="logo-image" src="assets/alchemy-logo.png">
-    <h1>Favorite Movies</h1></header>`;
+    <h1>${headerText}</h1></header>`;
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
 }
 
 export function makeProfile(user) {
+    let link = null;
+    let linkText = null;
+    if(window.location.pathname === '/favorites.html') {
+        link = '/';
+        linkText = 'Back to Movie Search';
+    }
+    else {
+        link = '/favorites.html';
+        linkText = 'My Favorite Movies';
+    }
     const avatar = user.photoURL || '../assets/smiley.png';
     const html = /*html*/ `<div class="profile">
     <img id="user-image" src="${avatar}">
     <span>${user.displayName}</span>
+    <p><a href="${link}">${linkText}</a></p>
     <p><button>Sign Out</button></p>
 </div>`;
 

@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
     <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/header.css">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <title>Favorites</title>
 </head>
@@ -13,26 +17,17 @@
         
     </div>
     <main>
-        <ul id="movie-list">
-            <li>
-                <h2>Star Wars</h2>
-                <span class="favorite-star">★</span>
-                <img class="poster" src="https://image.tmdb.org/t/p/w92/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
-                <p>1977</p>
-            </li>
-            <li>
-                <h2>Star Wars</h2>
-                <span class="favorite-star">★</span>
-                <img class="poster" src="https://image.tmdb.org/t/p/w92/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
-                <p>1977</p>
-            </li>
-            <li>
-                <h2>Star Wars</h2>
-                <span class="favorite-star">★</span>
-                <img class="poster" src="https://image.tmdb.org/t/p/w92/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
-                <p>1977</p>
-            </li>
-        </ul>
+        <div id="detail-list-container">
+
+            <section>
+                <ul id="movie-list">
+                    
+                </ul>
+            </section>
+            <section id="detail-container">
+                
+            </section>
+        </div>
     </main>
     <script type="module" src="./src/favorites.js"></script>
 </body>

@@ -9,7 +9,8 @@ test('Make movie list template', assert => {
         title: 'Star Wars',
         poster_path: '/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg',
         release_date: '1977-05-25'
-    }
+    };
+    
     const result = makeMovieTemplate(movie);
     const expected = /*html*/ `<li>
     <h2>Star Wars</h2>

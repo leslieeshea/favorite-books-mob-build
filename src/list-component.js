@@ -36,7 +36,7 @@ export function updateMovies(movies) {
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
             if(selectedMovie) {
-                li.classList.remove('selected');
+                selectedMovie.classList.remove('selected');
             }
             li.classList.add('selected');
             selectedMovie = li;

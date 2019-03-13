@@ -8,11 +8,13 @@ import { updatePagingInfo } from './paging-component.js';
 import { auth } from '../firebase.js';
 import { updateMovies } from './list-component.js'; 
 import loadMovieDetail from '../movie-detail/detail-component.js';
+import loadFooter from '../shared/footer-component.js';
 
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movie-section');
 
 loadHeader();
+loadFooter();
 
 loadMovies(movieId => {
     const url = makeMovieDetailUrl(movieId);

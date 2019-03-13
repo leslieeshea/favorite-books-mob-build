@@ -1,9 +1,11 @@
 import { auth, usersRef } from '../firebase.js';
 import loadHeader from '../shared/header-component.js';
+import loadFooter from '../shared/footer-component.js';
 
 const options = { skipAuth: true };
 
 loadHeader(options);
+loadFooter();
 
 const ui = new firebaseui.auth.AuthUI(auth);
 

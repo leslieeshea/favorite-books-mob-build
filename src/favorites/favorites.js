@@ -5,8 +5,11 @@ import { updateMovies } from '../movies/list-component.js';
 import loadMovies from '../movies/list-component.js';
 import { makeMovieDetailUrl } from '../movie-api.js';
 import loadMovieDetail from '../movie-detail/detail-component.js';
+import loadFooter from '../shared/footer-component.js';
 
 loadHeader();
+loadFooter();
+
 loadMovies(movieId => {
     const url = makeMovieDetailUrl(movieId);
     fetch(url)

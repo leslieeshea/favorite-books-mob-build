@@ -1,10 +1,10 @@
-import loadHeader from './header-component.js'
-import { auth, favoritesByUserRef } from './firebase.js';
-import convertObjectToArray from './convert-object-to-array.js';
-import { updateMovies } from './list-component.js';
-import loadMovies from './list-component.js';
-import { makeMovieDetailUrl } from './movie-api.js';
-import loadMovieDetail from './detail-component.js';
+import loadHeader from '../shared/header-component.js'
+import { auth, favoritesByUserRef } from '../firebase.js';
+import convertObjectToArray from '../convert-object-to-array.js';
+import { updateMovies } from '../movies/list-component.js';
+import loadMovies from '../movies/list-component.js';
+import { makeMovieDetailUrl } from '../movie-api.js';
+import loadMovieDetail from '../movie-detail/detail-component.js';
 
 loadHeader();
 loadMovies(movieId => {

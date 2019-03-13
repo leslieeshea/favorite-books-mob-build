@@ -1,4 +1,4 @@
-import { auth, favoritesByUserRef } from './firebase.js';
+import { auth, favoritesByUserRef } from '../firebase.js';
 
 export function makeMovieTemplate(movie) {
     let posterPath = null;

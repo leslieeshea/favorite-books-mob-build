@@ -1,13 +1,13 @@
-import loadHeader from './header-component.js';
+import loadHeader from '../shared/header-component.js';
 import loadMovies from './list-component.js';
 import './search-component.js';
 import { readFromQuery } from './query-component.js';
 import { updateSearchTerm } from './search-component.js';
-import { makeSearchMovieUrl, makeMovieDetailUrl } from './movie-api.js';
+import { makeSearchMovieUrl, makeMovieDetailUrl } from '../movie-api.js';
 import { updatePagingInfo } from './paging-component.js';
-import { auth } from './firebase.js';
+import { auth } from '../firebase.js';
 import { updateMovies } from './list-component.js'; 
-import loadMovieDetail from './detail-component.js';
+import loadMovieDetail from '../movie-detail/detail-component.js';
 
 const prompt = document.getElementById('prompt');
 const moviesSection = document.getElementById('movie-section');

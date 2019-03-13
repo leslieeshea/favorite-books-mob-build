@@ -1,4 +1,4 @@
-import { makeMovieDetail } from '../src/detail-component.js';
+import { makeMovieDetail } from '../src/movie-detail/detail-component.js';
 
 const test = QUnit.test;
 

@@ -1,4 +1,4 @@
-import { makeMovieTemplate } from '../src/list-component.js';
+import { makeMovieTemplate } from '../src/movies/list-component.js';
 
 const test = QUnit.test;
 

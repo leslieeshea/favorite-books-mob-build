@@ -1,4 +1,4 @@
-import { makeHeader, makeProfile } from '../src/header-component.js';
+import { makeHeader, makeProfile } from '../src/shared/header-component.js';
 
 const test = QUnit.test;
 

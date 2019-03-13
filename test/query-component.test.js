@@ -1,4 +1,4 @@
-import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/query-component.js';
+import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/movies/query-component.js';
 const test = QUnit.test;
 
 test('add search to empty query', assert => {

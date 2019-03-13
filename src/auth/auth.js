@@ -1,4 +1,4 @@
-import { auth, usersRef } from '..firebase.js';
+import { auth, usersRef } from '../firebase.js';
 import loadHeader from '../shared/header-component.js';
 
 const options = { skipAuth: true };

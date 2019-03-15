@@ -1,8 +1,8 @@
 const config = {
-    apiKey: "AIzaSyCG9hvPEpNECaGX7GOSvZrrYZQ2txN76Uc",
-    authDomain: "favorite-books-38a30.firebaseapp.com",
-    databaseURL: "https://favorite-books-38a30.firebaseio.com",
-    projectId: "favorite-books-38a30"
+    apiKey: 'AIzaSyCG9hvPEpNECaGX7GOSvZrrYZQ2txN76Uc',
+    authDomain: 'favorite-books-38a30.firebaseapp.com',
+    databaseURL: 'https://favorite-books-38a30.firebaseio.com',
+    projectId: 'favorite-books-38a30'
  
 };
 

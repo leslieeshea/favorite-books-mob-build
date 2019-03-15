@@ -1,4 +1,4 @@
-import loadHeader from '../shared/header-component.js'
+import loadHeader from '../shared/header-component.js';
 import { auth, favoritesByUserRef } from '../firebase.js';
 import convertObjectToArray from '../convert-object-to-array.js';
 import { updateMovies } from '../movies/list-component.js';
@@ -21,7 +21,7 @@ loadMovies(movieId => {
 
 auth.onAuthStateChanged(user => {
     const userId = user.uid;
-    const userFavoritesRef = favoritesByUserRef.child(user.uid);
+    const userFavoritesRef = favoritesByUserRef.child(userId);
 
     userFavoritesRef.once('value')
         .then(snapshot => {
